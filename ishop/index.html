@@ -17,15 +17,16 @@
 
   <script>
     var shopText = 'ishop (интернет-магазин)';
+    var titleHash = { code: 0, name: 'Наименование', price: 'Стоимость', url: 'URL фотографии', amount: 'Количество' };
     var productsArr = [
-      { name: 'Наименование', code: 0, price: 'Цена', url: '#URL фотографии', amount: 'Количество' },
-      { name: 'дрель', code: 1, price: 222, url: '#url1', amount: 10 },
-      { name: 'шуруповерт', code: 2, price: 123, url: '#url2', amount: 20 },
-      { name: 'триммер', code: 3, price: 444, url: '#url3', amount: 30 }
+      { code: 1, name: 'Дрель', price: 111, url: '#url1', amount: 10 },
+      { code: 2, name: 'Шуруповерт', price: 222, url: '#url2', amount: 20 },
+      { code: 3, name: 'Триммер', price: 333, url: '#url3', amount: 30 },
+      { code: 4, name: 'Перфоратор', price: 444, url: '#url4', amount: 40 }
     ];
 
     ReactDOM.render(
-      React.createElement(ListOfProducts, { shop: shopText, products: productsArr }),
+      React.createElement(ListOfProducts, { shop: shopText, products: productsArr, title: titleHash }),
       document.getElementById('container')
     );
 

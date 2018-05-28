@@ -1,57 +1,21 @@
-﻿.ListOfProducts
-{
-  border: double gray 3px;
-  width: 300px;
-  padding: 3px 7px;
-  background-color: #F0F0F0;
+﻿body{
+  text-align: center;
 }
-
-.ListOfProducts .Shop
-{
-  font-weight: bold;
-}
-
-.ListOfProducts .Products
-{
-  padding-top: 5px;
-}
-
-.ListOfProducts .Products .Product
-{
-  padding: 2px 0;
-}
-
-.ListOfProducts .Products .Product .Price
-{
- /* float: right;
-  width: 30px;
-  font-weight: bold;
-  text-align: right;*/
-  color: red;
-}
-
-.ListOfProducts .Products .Product .Name
-{
-  margin-right: 30px;
-  color: blue;
-}
-
-.ListOfProducts .Products .Product .Url
-{
-  margin-right: 100px;
-  color: green;
-}
-
-.ListOfProducts .Products .Product .Amount
-{
-  margin-right: 200px;
-  color: yellowgreen;
-}
-
-table {
+table{
+  margin: auto;
+  border: 2px solid black;
   border-collapse: collapse;
 }
-
-table, th, td {
+thead{
+  font-weight: bold;
+  border: 2px solid black;
+}
+td, th{
   border: 1px solid black;
+  margin: 5px;
+  
+}
+.Shop {
+  font-size: 22px;
+  color: blue;
 }
