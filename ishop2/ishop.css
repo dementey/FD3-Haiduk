@@ -1,0 +1,21 @@
+﻿body{
+  text-align: center;
+}
+table{
+  margin: auto;
+  border: 2px solid black;
+  border-collapse: collapse;
+}
+thead{
+  font-weight: bold;
+  border: 2px solid black;
+}
+td, th{
+  border: 1px solid black;
+  margin: 5px;
+  
+}
+.Shop {
+  font-size: 22px;
+  color: blue;
+}
