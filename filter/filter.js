@@ -8,7 +8,7 @@
     //иницилизируем стейты
     getInitialState: function () {
         return {
-            statelist: this.props.defaultList,
+            statelist: this.props.defaultList.slice(),
             stateInputText: '',
             checkedCheckbox: false,
         }

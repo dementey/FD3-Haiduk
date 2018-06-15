@@ -19,3 +19,7 @@ td, th{
   font-size: 22px;
   color: blue;
 }
+
+.selected {
+  background-color:lightblue;
+}
