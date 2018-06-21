@@ -1,0 +1,54 @@
+﻿body{
+  text-align: center;
+}
+table{
+  margin: auto;
+  border: 1px solid grey;
+  border-collapse: collapse;
+  background: whitesmoke;
+}
+thead{
+  font-weight: bold;
+  border: 2px solid grey;
+}
+td, th{
+  border: 1px solid grey;
+  margin: 5px;
+  color: grey;
+  padding: 10px;
+  
+}
+.Shop {
+  font-size: 22px;
+  padding: 20px;
+  color: blue;
+}
+
+.selected {
+  background-color:lightblue;
+}
+
+button {
+  border: none;
+  color: white;
+  padding: 5px 10px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  border-radius: 5px;
+  
+}
+
+.editButton {
+  background-color: #4CAF50;
+} /* Green */
+
+.deleteButton {
+  background-color: #f44336;
+} /* Red */ 
+
+.newButton {
+  background-color: #008CBA;
+  right: 10;
+} /* Blue px*/
+
