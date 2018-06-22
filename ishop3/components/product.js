@@ -1,7 +1,6 @@
-
 import React from 'react';
 import PropTypes from 'prop-types';
-import Card from './card';
+
 import './ishop.css';
 
 class Product extends React.Component {
@@ -16,12 +15,12 @@ class Product extends React.Component {
         cbIsSelected: PropTypes.bool.isRequired,
         cbIsCard: PropTypes.func.isRequired,
     };
+
     isSelected = (EO) => {
         EO.stopPropagation();
         this.props.cbIsSelectFunc(EO.currentTarget.className);
         this.props.cbIsCard(this.props);
-        
-    };
+    }
 
     isEdit = (EO) => {
         EO.stopPropagation();
@@ -33,12 +32,11 @@ class Product extends React.Component {
         console.log(EO.currentTarget.className);
     };
 
-
     render() {
         return (
             <tr className={this.props.cbIsSelected ? this.props.num + ' selected' : this.props.num} onClick={this.isSelected}>
                 <td>{this.props.name}</td>
-                <td> <a href={this.props.url}> сcылка на фото</a></td>
+                <td><a href={this.props.url}> сcылка на фото</a></td>
                 <td> {this.props.price}</td>
                 <td>{this.props.amount}</td>
                 <td>

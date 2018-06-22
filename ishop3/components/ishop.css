@@ -1,11 +1,26 @@
 ﻿body{
   text-align: center;
 }
-table{
+.productTable{
   margin: auto;
   border: 1px solid grey;
   border-collapse: collapse;
   background: whitesmoke;
+}
+.cardTable{
+  margin: auto;
+  border: px solid blue;
+  border-collapse: collapse;
+  background: lightblue;
+  width: 688px;
+
+}
+.cardTable td, th{
+  border: 1px solid grey;
+  margin: 5px;
+  color: grey;
+  padding: 20px;
+  width: 20px;
 }
 thead{
   font-weight: bold;
@@ -16,7 +31,6 @@ td, th{
   margin: 5px;
   color: grey;
   padding: 10px;
-  
 }
 .Shop {
   font-size: 22px;
@@ -48,6 +62,7 @@ button {
 } /* Red */ 
 
 .newButton {
+
   background-color: #008CBA;
   right: 10;
 } /* Blue px*/
