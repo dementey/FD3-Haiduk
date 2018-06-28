@@ -26,6 +26,7 @@ class ListOfProducts extends React.Component {
       amount: PropTypes.string.isRequired,
     })
   };
+  //props shop
 
   state = {
     isSelected: '',
