@@ -12,9 +12,11 @@ class Br2jsx extends React.Component {
   };
 
   br2jsxFunc(txt) {
-    let keyNum=1;
     let arr = txt.split(/<br\s*\/?>/i);
-    return arr.reduce((v, i) => v.concat(i, <br key={keyNum++}/>), []);
+    return arr.reduce((r, v, i) => {
+      if (i < arr.length - 1) return r.concat(v, <br key={i} />);
+      else return r.concat(v);
+    }, []);
   };
 
   render() {

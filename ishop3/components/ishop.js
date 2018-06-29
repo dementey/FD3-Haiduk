@@ -6,7 +6,7 @@ import './ishop.css';
 import Product from './product';
 import Card from './card';
 
-class ListOfProducts extends React.Component {
+class IShop extends React.Component {
 
   static propTypes = {
     products: PropTypes.arrayOf(
@@ -26,12 +26,17 @@ class ListOfProducts extends React.Component {
       amount: PropTypes.string.isRequired,
     })
   };
-  //props shop
 
   state = {
     isSelected: '',
     curentCard: '',
   };
+  componentWillReceiveProps = (newProps) => { console.log('componentWillReceiveProps ishop'); };
+  componentWillUpdate = () => { console.log('componentWillUpdate ishop'); };
+  componentDidUpdate = (oldProps, oldState) => { console.log('componentDidUpdateishop ishop' ); };
+  componentWillMount = () => { console.log('componentWillMount ishop'); };
+  componentDidMount = () => { console.log('componentDidMount ishop'); };
+  componentWillUnmount = () => { console.log('componentWillUnmount ishop'); };
 
   isSelectFunc = (cb) => {
     this.setState({ isSelected: cb });
@@ -91,4 +96,4 @@ class ListOfProducts extends React.Component {
   }
 }
 
-export default ListOfProducts;
+export default IShop;

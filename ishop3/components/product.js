@@ -16,6 +16,13 @@ class Product extends React.Component {
         cbIsCard: PropTypes.func.isRequired,
     };
 
+    componentWillReceiveProps = (newProps) => { console.log('componentWillReceiveProps product'); };
+    componentWillUpdate = () => { console.log('componentWillUpdate product'); };
+    componentDidUpdate = (oldProps, oldState) => { console.log('componentDidUpdateishop product' ); };
+    componentWillMount = () => { console.log('componentWillMount product'); };
+    componentDidMount = () => { console.log('componentDidMount product'); };
+    componentWillUnmount = () => { console.log('componentWillUnmount product'); };
+
     isSelected = (EO) => {
         EO.stopPropagation();
         this.props.cbIsSelectFunc(EO.currentTarget.className);

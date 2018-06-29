@@ -3,14 +3,14 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-import ListOfProducts from './components/ishop';
+import IShop from './components/ishop';
 
 let shopText = 'ishop (интернет-магазин)';
 let titleHash = require('./theadtable.json');
 let productsArr = require('./products.json');
 
 ReactDOM.render(
-  <ListOfProducts
+  <IShop
     shop={shopText}
     products={productsArr}
     title={titleHash} />,
