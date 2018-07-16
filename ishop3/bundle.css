@@ -1,4 +1,4 @@
-﻿body{
+body{
   text-align: center;
 }
 .productTable{
@@ -62,7 +62,10 @@ button {
 } /* Red */ 
 
 .newButton {
+
   background-color: #008CBA;
   right: 10;
 } /* Blue px*/
 
+
+/*# sourceMappingURL=bundle.css.map*/

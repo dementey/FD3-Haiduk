@@ -11,37 +11,23 @@ class Product extends React.Component {
         price: PropTypes.number.isRequired,
         url: PropTypes.string.isRequired,
         amount: PropTypes.number.isRequired,
-        cbIsSelectFunc: PropTypes.func.isRequired,
-        cbIsSelected: PropTypes.bool.isRequired,
+        cbIsSelectFunc: PropTypes.func.isRequired,// callBack функция при вызове которой мы передаем в родительский модуль выбранный товар
+        isClicked: PropTypes.bool.isRequired,
         cbIsCard: PropTypes.func.isRequired,
     };
 
-    componentWillReceiveProps = (newProps) => { console.log('componentWillReceiveProps product'); };
-    componentWillUpdate = () => { console.log('componentWillUpdate product'); };
-    componentDidUpdate = (oldProps, oldState) => { console.log('componentDidUpdateishop product' ); };
-    componentWillMount = () => { console.log('componentWillMount product'); };
-    componentDidMount = () => { console.log('componentDidMount product'); };
-    componentWillUnmount = () => { console.log('componentWillUnmount product'); };
-
     isSelected = (EO) => {
-        EO.stopPropagation();
-        this.props.cbIsSelectFunc(EO.currentTarget.className);
-        this.props.cbIsCard(this.props);
+        this.props.cbIsSelectFunc(this.props, false);
+        if (!this.props.isClicked) this.props.cbIsCard(this.props, false);
     }
 
     isEdit = (EO) => {
-        EO.stopPropagation();
-        console.log(EO.currentTarget.className);
-    };
-
-    isDelete = (EO) => {
-        EO.stopPropagation();
-        console.log(EO.currentTarget.className);
+        if (this.props.isClicked) this.props.cbIsCard(this.props, true);
     };
 
     render() {
         return (
-            <tr className={this.props.cbIsSelected ? this.props.num + ' selected' : this.props.num} onClick={this.isSelected}>
+            <tr className={this.props.isClicked ? this.props.num + ' selected' : this.props.num} onClick={this.isSelected}>
                 <td>{this.props.name}</td>
                 <td><a href={this.props.url}> сcылка на фото</a></td>
                 <td> {this.props.price}</td>

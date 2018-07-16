@@ -30,28 +30,38 @@ class IShop extends React.Component {
   state = {
     isSelected: '',
     curentCard: '',
+    currentButtonEditClicked: false,
+    productsState: this.props.products,
   };
-  componentWillReceiveProps = (newProps) => { console.log('componentWillReceiveProps ishop'); };
-  componentWillUpdate = () => { console.log('componentWillUpdate ishop'); };
-  componentDidUpdate = (oldProps, oldState) => { console.log('componentDidUpdateishop ishop' ); };
-  componentWillMount = () => { console.log('componentWillMount ishop'); };
-  componentDidMount = () => { console.log('componentDidMount ishop'); };
-  componentWillUnmount = () => { console.log('componentWillUnmount ishop'); };
 
-  isSelectFunc = (cb) => {
-    this.setState({ isSelected: cb });
+  isSelectFunc = (curProd) => {
+    //console.log(curProd);
+    this.setState({ isSelected: curProd.num });
+    this.setState({ curentCard: curProd });
   };
 
   isNew = (EO) => {
     EO.stopPropagation();
-    console.log(EO.currentTarget.className);
   };
 
-  isCard = (hash) => {
-    this.setState({ curentCard: hash });
+  isCard = (hash, isButtonEditClicked = false) => {
+    //this.setState({ curentCard: hash });
+    //console.log(hash);
+    this.setState({ currentButtonEditClicked: isButtonEditClicked });
   };
+
+  cbCard = (a1) => {
+    console.log(a1);
+    console.log(this.state.productsState[a1.code-1]);
+let aaa=this.state.productsState;
+aaa[a1.code-1]=a1;
+    this.setState({ productsState: aaa });
+  };
+
 
   render() {
+
+    //console.log(this.state.curentCard);
     return (
       <div>
         <div className='Shop'>{this.props.shop}</div>
@@ -66,7 +76,7 @@ class IShop extends React.Component {
             </tr>
           </thead>
           <tbody className='Products'>
-            {this.props.products.map(v =>
+            {this.state.productsState.map(v =>
               <Product key={v.code}
                 num={v.code}
                 name={v.name}
@@ -74,20 +84,19 @@ class IShop extends React.Component {
                 url={v.url}
                 amount={v.amount}
                 cbIsSelectFunc={this.isSelectFunc}
-                cbIsSelected={this.state.isSelected == v.code ? true : false}
+                isClicked={this.state.isSelected == v.code ? true : false}
                 cbIsCard={this.isCard}
-                cbIsSelected2={this.state.isSelected == v.code ? v.code : null}
               />
             )}
           </tbody>
         </table>
         <button className="newButton" onClick={this.isNew}  >Новый товар</button>
+
         {this.state.isSelected ?
-          <Card className='card'
-            name={this.state.curentCard.name}
-            price={this.state.curentCard.price}
-            url={this.state.curentCard.url}
-            amount={this.state.curentCard.amount}
+          <Card className='card' key={10 + this.state.isSelected}
+            curentCard={this.state.curentCard}
+            currentButtonEditClicked={this.state.currentButtonEditClicked}
+            cbCard={this.cbCard}
           /> : null
         }
       </div>
