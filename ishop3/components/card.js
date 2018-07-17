@@ -3,7 +3,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import './ishop.css';
-
+import {validateText, nonCyrillicText, validateUrl, validateDate, validateEmail} from "./validate";
 class Card extends React.Component {
 
     static propTypes = {
@@ -33,6 +33,7 @@ class Card extends React.Component {
         if (EO.currentTarget.className == 'editName') {
             this.setState({ editName: EO.currentTarget.value });
             console.log(this.state.editName);
+            console.log(validateDate(this.state.editName));
         }
         else if (EO.currentTarget.className == 'editUrl') {
             this.setState({ editUrl: EO.currentTarget.value });
