@@ -66,3 +66,8 @@ button {
   right: 10;
 } /* Blue px*/
 
+.warning
+{
+  color: red;
+
+} 

@@ -29,7 +29,7 @@ class Product extends React.Component {
         return (
             <tr className={this.props.isClicked ? this.props.num + ' selected' : this.props.num} onClick={this.isSelected}>
                 <td>{this.props.name}</td>
-                <td><a href={this.props.url}> сcылка на фото</a></td>
+                <td><a href={'#'+this.props.num }>{this.props.url}</a></td>
                 <td> {this.props.price}</td>
                 <td>{this.props.amount}</td>
                 <td>

@@ -3,28 +3,28 @@
         "code": 1,
         "name": "Дрель",
         "price": 111,
-        "url": "#url1",
+        "url": "http://ishop3.by/1",
         "amount": 10
     },
     {
         "code": 2,
         "name": "Шуруповерт",
         "price": 222,
-        "url": "#url2",
+        "url": "http://ishop3.by/2",
         "amount": 20
     },
     {
         "code": 3,
         "name": "Триммер",
         "price": 333,
-        "url": "#url3",
+        "url": "http://ishop3.by/3",
         "amount": 30
     },
     {
         "code": 4,
         "name": "Перфоратор",
         "price": 444,
-        "url": "#url4",
+        "url": "http://ishop3.by/4",
         "amount": 40
     }
 ]

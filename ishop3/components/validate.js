@@ -1,14 +1,12 @@
 "use strict";
 
-function validateText(a) {
-  while (Boolean(a) === false || a == "") return false;
-  return true;
-}
-
-function nonCyrillicText(b) {
-  for (var i = 0; i < b.length; i++) if (b.charCodeAt(i) < 1040 || b.charCodeAt(i) > 1103) i++;
-  return true;
-  return false;
+function validateText(b) {
+  if (Boolean(b) === false || b == "") return false;
+  else {
+    var result = true, resultAll;
+    for (var i = 0; i < b.length; i++) resultAll = (result && (b.charCodeAt(i) < 1040 || b.charCodeAt(i) > 1103));
+    return !resultAll;
+  }
 }
 
 function validateUrl(str) {
@@ -20,25 +18,10 @@ function validateUrl(str) {
   }
 }
 
-function validateDate(value) {
-  var arrD = value.split(".");
-  arrD[1] -= 1;
-  var d = new Date(arrD[2], arrD[1], arrD[0]);
-  if ((d.getFullYear() == arrD[2]) && (d.getMonth() == arrD[1]) && (d.getDate() == arrD[0])) {
-    return true;
-  } else {
-    return false;
-  }
-}
 
-function validateEmail(val) {
-  if (!val.match(/\S+@\S+\.\S+/)) {
-    return false;
-  }
-  if (val.indexOf(' ') != -1 || val.indexOf('..') != -1) {
-    return false;
-  }
-  return true;
-}
+function validateNumber(a) {
+  if ((a instanceof Number || typeof a === 'number') && !isNaN(a)) return true;
+  else return false;
+};
 
-export { validateText, nonCyrillicText, validateUrl, validateDate, validateEmail };
+export {validateText, validateUrl, validateNumber };
