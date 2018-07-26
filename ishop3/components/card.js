@@ -16,10 +16,10 @@ class Card extends React.Component {
                 price: PropTypes.number.isRequired,
                 amount: PropTypes.number.isRequired,
             }),
-        currentButtonEditClicked: PropTypes.bool.isRequired,
+        disableEnableValue: PropTypes.bool.isRequired,
         cbCard: PropTypes.func.isRequired,
         newProduct: PropTypes.bool.isRequired,
-        allProducts:PropTypes.number.isRequired,
+        allProducts: PropTypes.number.isRequired,
     };
 
 
@@ -65,44 +65,53 @@ class Card extends React.Component {
         this.props.cbCard({ "code": this.props.editNum, "name": this.props.editName, "url": this.props.editUrl, "price": Number(this.props.editPrice), "amount": Number(this.props.editAmount) }, false);
     };
 
-
     isNew = (EO) => {
         this.setState(() => { return { newProductState: true }; });
-        this.props.cbCard({ "code": this.props.editNum, "name": this.props.editName, "url": this.props.editUrl, "price": Number(this.props.editPrice), "amount": Number(this.props.editAmount) }, true, true);
+        this.props.cbCard({ "code": this.props.editNum, "name": this.props.editName, "url": this.props.editUrl, "price": Number(this.props.editPrice), "amount": Number(this.props.editAmount) }, false, true);
     };
 
-isAdd=(EO)=>{
-    this.props.cbCard({ "code": this.props.allProducts+1, "name": this.props.editName, "url": this.props.editUrl, "price": Number(this.props.editPrice), "amount": Number(this.props.editAmount) }, false);
-};
+    isAdd = (EO) => {
+
+        if (validateText(this.state.editName) && validateUrl(this.state.editUrl) && validateNumber(Number(this.state.editPrice)) && validateNumber(Number(this.state.editAmount)))
+            this.props.cbCard({ "code": this.props.allProducts + 1, "name": this.state.editName, "url": this.state.editUrl, "price": Number(this.state.editPrice), "amount": Number(this.state.editAmount) }, false);
+        else {
+            this.setState({ editNumValidate: validateUrl(this.state.editName) });
+
+            this.setState({ editUrlValidate: validateUrl(this.state.editUrl) });
+
+            this.setState({ editPriceValidate: validateNumber(this.state.editPrice) });
+
+            this.setState({ editAmountValidate: validateNumber(this.state.editAmount) });
+        }
+
+    };
 
     render() {
-        console.log(this.props.newProduct);
-        console.log(this.props.allProducts);
+        console.log(this.props.disableEnableValue);
         return (
 
 
             <table className='cardTable'>
                 <tbody>
-                    <thead> <button className="newButton" onClick={this.isNew}>Новый товар</button></thead>
                     <tr>
                         <td>
-                            <input type='text' className='editName' defaultValue={!(this.props.newProduct) ? this.props.curentCard.name : 0} disabled={!this.props.currentButtonEditClicked} onChange={this.isEdit} />
+                            <input type='text' className='editName' defaultValue={!(this.props.newProduct) ? this.props.curentCard.name : ''} disabled={!this.props.disableEnableValue} onChange={this.isEdit} />
                             {(!this.state.editNumValidate) && <div className='warning'>Повторите попытку ввода на русском языке</div>}
                         </td>
                         <td>
-                            <input type='text' className='editUrl' defaultValue={(!this.props.newProduct) ? this.props.curentCard.url : 0} disabled={!this.props.currentButtonEditClicked} onChange={this.isEdit} />
+                            <input type='text' className='editUrl' defaultValue={(!this.props.newProduct) ? this.props.curentCard.url : ''} disabled={!this.props.disableEnableValue} onChange={this.isEdit} />
                             {(!this.state.editUrlValidate) && <div className='warning'>Введите пожалуйста URL в формате https://www.ваш_сайт.домен/</div>}
                         </td>
                         <td>{
-                            <input type='text' className='editPrice' defaultValue={(!this.props.newProduct) ? this.props.curentCard.price : 0} disabled={!this.props.currentButtonEditClicked} onChange={this.isEdit} />}
+                            <input type='text' className='editPrice' defaultValue={(!this.props.newProduct) ? this.props.curentCard.price : ''} disabled={!this.props.disableEnableValue} onChange={this.isEdit} />}
                             {(!this.state.editPriceValidate) && <div className='warning'>Вы ввели не число, повторите попытку ввода</div>}
                         </td>
                         <td>{
-                            <input type='text' className='editAmount' defaultValue={(!this.props.newProduct) ? this.props.curentCard.amount : 0} disabled={!this.props.currentButtonEditClicked} onChange={this.isEdit} />}
+                            <input type='text' className='editAmount' defaultValue={(!this.props.newProduct) ? this.props.curentCard.amount : ''} disabled={!this.props.disableEnableValue} onChange={this.isEdit} />}
                             {(!this.state.editAmountValidate) && <div className='warning'>Вы ввели не число, повторите попытку ввода</div>}
                         </td>
 
-                        {(this.props.currentButtonEditClicked) &&
+                        {(this.props.disableEnableValue) && (!this.props.newProduct) &&
                             <td>
                                 <button className="saveButton" onClick={this.isSave}>Cохранить</button>
                                 &nbsp;

@@ -28,9 +28,9 @@ class IShop extends React.Component {
   };
 
   state = {
-    isSelected: '',
+    isSelected: false,
     curentCard: '',
-    currentButtonEditClicked: false,
+    disableEnableValue: false,
     productsState: this.props.products,
     newProduct: false,
   };
@@ -58,26 +58,28 @@ class IShop extends React.Component {
   };
 
   isCard = (hash, isButtonEditClicked = false) => {
-    //console.log(isButtonEditClicked);
-    this.setState({ currentButtonEditClicked: isButtonEditClicked });
+    this.setState({ disableEnableValue: isButtonEditClicked });
   };
 
-  cbCard = (a1, a2, a3) => {
+  cbCard = (editedProduct, unselectCard, addProduct) => {
     let aaa = this.state.productsState;
-    aaa[a1.code - 1] = a1;
+    if (!addProduct) {
+      aaa[editedProduct.code - 1] = editedProduct;
+    }
+    else aaa.push(editedProduct);
     this.setState({ productsState: aaa });
-    this.setState({ isSelected: a2 });
-    this.setState({ newProduct: a3 });
+    this.setState({ isSelected: unselectCard });
+    this.setState({ newProduct: addProduct });
   };
 
 
   isNew = (EO) => {
     this.setState(() => { return { newProduct: true }; });
-    this.setState({currentButtonEditClicked:true});
-};
+    this.setState({ disableEnableValue: true });
+    this.setState({ curentCard: { code: this.props.products.length + 1, name: '', price: '', url: '', amount: '' } });
+  };
 
   render() {
-console.log(this.props.products.length);
     return (
       <div>
         <div className='Shop'>{this.props.shop}</div>
@@ -102,16 +104,16 @@ console.log(this.props.products.length);
                 cbIsSelectFunc={this.isSelectFunc}
                 isClicked={this.state.isSelected == v.code ? true : false}
                 cbIsCard={this.isCard}
-                newProduct={this.state.newProduct}              />
+                newProduct={this.state.newProduct} />
             )}
           </tbody>
         </table>
-         <button className="newButton" onClick={this.isNew}>Новый товар</button> 
+        <button className="newButton" onClick={this.isNew}>Новый товар</button>
 
-        {this.state.isSelected||this.state.newProduct ?
-          <Card className='card' key={10 + this.state.isSelected}
+        {this.state.isSelected || this.state.newProduct ?
+          <Card className='card' key={100 + this.state.isSelected + this.state.newProduct && 10}
             curentCard={this.state.curentCard}
-            currentButtonEditClicked={this.state.currentButtonEditClicked}
+            disableEnableValue={this.state.disableEnableValue}
             cbCard={this.cbCard}
             newProduct={this.state.newProduct}
             allProducts={this.props.products.length}
