@@ -76,18 +76,15 @@ class Card extends React.Component {
             this.props.cbCard({ "code": this.props.allProducts + 1, "name": this.state.editName, "url": this.state.editUrl, "price": Number(this.state.editPrice), "amount": Number(this.state.editAmount) }, false);
         else {
             this.setState({ editNumValidate: validateUrl(this.state.editName) });
-
             this.setState({ editUrlValidate: validateUrl(this.state.editUrl) });
-
             this.setState({ editPriceValidate: validateNumber(this.state.editPrice) });
-
             this.setState({ editAmountValidate: validateNumber(this.state.editAmount) });
         }
 
     };
 
     render() {
-        console.log(this.props.disableEnableValue);
+       // console.log(this.props.disableEnableValue);
         return (
 
 

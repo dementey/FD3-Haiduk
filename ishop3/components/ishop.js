@@ -42,8 +42,8 @@ class IShop extends React.Component {
       if (confirm('Вы желаете удалить товар?')) {
         let arr = this.state.productsState;
         delete arr[curProd.num - 1];
-        this.setState({ isSelected: false });
         this.setState({ productsState: arr });
+        this.setState({ isSelected: false });
 
       } else null;
     }
@@ -80,6 +80,8 @@ class IShop extends React.Component {
   };
 
   render() {
+
+    console.log(this.state.isSelected + '/' + this.state.newProduct)
     return (
       <div>
         <div className='Shop'>{this.props.shop}</div>
