@@ -84,11 +84,11 @@ class Card extends React.Component {
     };
 
     render() {
-       // console.log(this.props.disableEnableValue);
+       console.log(this.props.curentCard);
         return (
 
 
-            <table className='cardTable'>
+            <table className='cardTable' key = { 10*this.props.curentCard.num }>
                 <tbody>
                     <tr>
                         <td>

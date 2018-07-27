@@ -37,13 +37,16 @@ class IShop extends React.Component {
 
   isSelectFunc = (curProd, del) => {
 
-
+    console.log(curProd);
     if (del) {
       if (confirm('Вы желаете удалить товар?')) {
         let arr = this.state.productsState;
         delete arr[curProd.num - 1];
         this.setState({ productsState: arr });
-        this.setState({ isSelected: false });
+        this.setState(() => { return { isSelected: false }; });
+        this.setState(() => { return { newProduct: false }; });
+        // this.setState({ isSelected: false });
+        // this.setState({ newProduct: false });
 
       } else null;
     }
@@ -74,7 +77,8 @@ class IShop extends React.Component {
 
 
   isNew = (EO) => {
-    this.setState(() => { return { newProduct: true }; });
+    //this.setState(() => { return { newProduct: true }; });
+    this.setState({ newProduct: true });
     this.setState({ disableEnableValue: true });
     this.setState({ curentCard: { code: this.props.products.length + 1, name: '', price: '', url: '', amount: '' } });
   };
