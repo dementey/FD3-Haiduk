@@ -17,20 +17,20 @@ class Product extends React.Component {
     };
 
     isSelected = (EO) => {
-        EO.preventDefault();
+        EO.stopPropagation();
         this.props.cbIsSelectFunc(this.props);
         if (!this.props.isClicked) this.props.cbIsCard(this.props, false);
     }
 
     isEdit = (EO) => {
-        EO.preventDefault();
+        EO.stopPropagation();
         if (this.props.isClicked) this.props.cbIsCard(this.props, true);
     };
 
 
     isDelete = (EO) => {
-        EO.preventDefault();
-        this.props.cbIsSelectFunc(this.props, true);
+        EO.stopPropagation();
+        this.props.cbIsSelectFunc(this.props, true, false);
     };
 
     render() {

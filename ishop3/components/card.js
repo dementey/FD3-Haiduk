@@ -18,7 +18,7 @@ class Card extends React.Component {
             }),
         disableEnableValue: PropTypes.bool.isRequired,
         cbCard: PropTypes.func.isRequired,
-        newProduct: PropTypes.bool.isRequired,
+        newProduct: PropTypes.bool,
         allProducts: PropTypes.number.isRequired,
     };
 
@@ -84,42 +84,41 @@ class Card extends React.Component {
     };
 
     render() {
-       console.log(this.props.curentCard);
         return (
 
 
-            <table className='cardTable' key = { 10*this.props.curentCard.num }>
+            <table className='cardTable' key={10 * this.props.curentCard.num}>
                 <tbody>
                     <tr>
-                        <td>
+                        <td>{(this.props.newProduct) && <div>Введите наименование товара</div>}
                             <input type='text' className='editName' defaultValue={!(this.props.newProduct) ? this.props.curentCard.name : ''} disabled={!this.props.disableEnableValue} onChange={this.isEdit} />
                             {(!this.state.editNumValidate) && <div className='warning'>Повторите попытку ввода на русском языке</div>}
                         </td>
-                        <td>
+                        <td>{(this.props.newProduct) && <div>Введите URL фотографии</div>}
                             <input type='text' className='editUrl' defaultValue={(!this.props.newProduct) ? this.props.curentCard.url : ''} disabled={!this.props.disableEnableValue} onChange={this.isEdit} />
                             {(!this.state.editUrlValidate) && <div className='warning'>Введите пожалуйста URL в формате https://www.ваш_сайт.домен/</div>}
                         </td>
-                        <td>{
-                            <input type='text' className='editPrice' defaultValue={(!this.props.newProduct) ? this.props.curentCard.price : ''} disabled={!this.props.disableEnableValue} onChange={this.isEdit} />}
+                        <td>{(this.props.newProduct) && <div>Введите стоимость</div>}
+                            <input type='text' className='editPrice' defaultValue={(!this.props.newProduct) ? this.props.curentCard.price : ''} disabled={!this.props.disableEnableValue} onChange={this.isEdit} />
                             {(!this.state.editPriceValidate) && <div className='warning'>Вы ввели не число, повторите попытку ввода</div>}
                         </td>
-                        <td>{
-                            <input type='text' className='editAmount' defaultValue={(!this.props.newProduct) ? this.props.curentCard.amount : ''} disabled={!this.props.disableEnableValue} onChange={this.isEdit} />}
+                        <td>{(this.props.newProduct) && <div>Введите количество</div>}
+                            <input type='text' className='editAmount' defaultValue={(!this.props.newProduct) ? this.props.curentCard.amount : ''} disabled={!this.props.disableEnableValue} onChange={this.isEdit} />
                             {(!this.state.editAmountValidate) && <div className='warning'>Вы ввели не число, повторите попытку ввода</div>}
                         </td>
 
                         {(this.props.disableEnableValue) && (!this.props.newProduct) &&
                             <td>
-                                <button className="saveButton" onClick={this.isSave}>Cохранить</button>
+                                <button className="editButton" onClick={this.isSave}>Cохранить</button>
                                 &nbsp;
-                                <button className="cancelButton" onClick={this.isСancel}>Отмена</button>
+                                <button className="deleteButton" onClick={this.isСancel}>Отмена</button>
                             </td>}
 
                         {(this.props.newProduct) &&
                             <td>
-                                <button className="saveButton" onClick={this.isAdd}>добавить</button>
+                                <button className="editButton" onClick={this.isAdd}>добавить</button>
                                 &nbsp;
-                                <button className="cancelButton" onClick={this.isСancel}>Отмена</button>
+                                <button className="deleteButton" onClick={this.isСancel}>Отмена</button>
                             </td>}
 
 

@@ -1,7 +1,6 @@
 "use strict";
 
 function validateText(b) {
-  console.log(b);
   if (Boolean(b) === false || b == ""||typeof b == "undefined") return false;
   else {
     var result = true, resultAll;
@@ -22,7 +21,7 @@ function validateUrl(str) {
 
 
 function validateNumber(a) {
-  if ((a instanceof Number || typeof a === 'number') && !isNaN(a)) return true;
+  if ((a instanceof Number || typeof a === 'number') && !isNaN(a) && a!=0) return true;
   else return false;
 };
 

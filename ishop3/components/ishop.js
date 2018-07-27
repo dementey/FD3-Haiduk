@@ -35,23 +35,22 @@ class IShop extends React.Component {
     newProduct: false,
   };
 
-  isSelectFunc = (curProd, del) => {
+  isSelectFunc = (curProd, del, unsel) => {
 
-    console.log(curProd);
     if (del) {
+
       if (confirm('Вы желаете удалить товар?')) {
         let arr = this.state.productsState;
         delete arr[curProd.num - 1];
         this.setState({ productsState: arr });
-        this.setState(() => { return { isSelected: false }; });
-        this.setState(() => { return { newProduct: false }; });
-        // this.setState({ isSelected: false });
-        // this.setState({ newProduct: false });
-
+        this.setState({ isSelected: false });
+        this.setState({ newProduct: false });
       } else null;
+
     }
     else {
-      this.setState({ isSelected: curProd.num });
+      //this.setState({ isSelected: curProd.num });
+      this.setState({ isSelected: true });
       this.setState({ curentCard: curProd });
     };
   };
@@ -80,12 +79,11 @@ class IShop extends React.Component {
     //this.setState(() => { return { newProduct: true }; });
     this.setState({ newProduct: true });
     this.setState({ disableEnableValue: true });
-    this.setState({ curentCard: { code: this.props.products.length + 1, name: '', price: '', url: '', amount: '' } });
+    this.setState({ curentCard: { code: this.props.products.length + 1, name: '', price: 0, url: '', amount: 0 } });
   };
 
   render() {
 
-    console.log(this.state.isSelected + '/' + this.state.newProduct)
     return (
       <div>
         <div className='Shop'>{this.props.shop}</div>
@@ -108,7 +106,7 @@ class IShop extends React.Component {
                 url={v.url}
                 amount={v.amount}
                 cbIsSelectFunc={this.isSelectFunc}
-                isClicked={this.state.isSelected == v.code ? true : false}
+                isClicked={this.state.curentCard.num == v.code ? true : false}
                 cbIsCard={this.isCard}
                 newProduct={this.state.newProduct} />
             )}
