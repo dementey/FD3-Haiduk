@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 import { clientsEvents } from "./events";
 
-class MobileEditForm extends React.PureComponent {
+class MobileEditClient extends React.PureComponent {
     static propTypes = {
         client: PropTypes.shape({
             id: PropTypes.number.isRequired,
@@ -17,7 +17,6 @@ class MobileEditForm extends React.PureComponent {
     };
 
     componentWillReceiveProps = (newProps) => {
-        console.log("MobileEditForm componentWillReceiveProps");
         this.setState({ client: newProps.client, newName: newProps.client.fio, newBalance: this.props.client.balance })
 
     };
@@ -35,12 +34,11 @@ class MobileEditForm extends React.PureComponent {
     };
 
     cancelChanges = (EO) => {
-        clientsEvents.emit('cancelChangesEditClient')
+        clientsEvents.emit('cancelChanges')
     };
 
-
     render() {
-        console.log('MobileEditForm render');
+        console.log('MobileEditClient render');
         return <table >
             <tbody>
                 <tr>
@@ -68,4 +66,4 @@ class MobileEditForm extends React.PureComponent {
     }
 }
 
-export default MobileEditForm;
+export default MobileEditClient;

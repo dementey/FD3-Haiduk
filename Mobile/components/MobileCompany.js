@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 import MobileClient from './MobileClient';
 import MobileAddNewClient from './MobileAddNewClient.js';
-import MobileEditForm from './MobileEditForm.js';
+import MobileEditClient from './MobileEditClient.js';
 import { clientsEvents } from './events';
 
 import './MobileCompany.css';
@@ -24,19 +24,18 @@ class MobileCompany extends React.PureComponent {
   state = {
     name: this.props.name,
     clients: this.props.clients,
-    mode: null, //1 - MobileAddNewClient, 2- MobileEditForm
+    mode: null, 
     selectedClient: null,
     allclients: this.props.clients
   };
 
   componentWillMount = () => {
     clientsEvents.addListener('saveChangesNewClient', this.saveChangesNewClient);
-    clientsEvents.addListener('sageChangesEditClient', this.sageChangesEditClient);
+    clientsEvents.addListener('saveChangesEditClient', this.saveChangesEditClient);
     clientsEvents.addListener('cancelChanges', this.cancelChanges);
-    clientsEvents.addListener('openMobileEditForm', this.openMobileEditForm);
+    clientsEvents.addListener('openMobileEditClient', this.openMobileEditClient);
     clientsEvents.addListener('deleteClient', this.deleteClient);
-    clientsEvents.addListener('cancelChangesEditClient', this.cancelChanges);
-  };
+   };
 
 
   newClientForm = (newClient) => {
@@ -45,7 +44,7 @@ class MobileCompany extends React.PureComponent {
     }
   };
 
-  openMobileEditForm = (clientInfo) => {
+  openMobileEditClient = (clientInfo) => {
     this.setState({ mode: 2, selectedClient: clientInfo });
   };
 
@@ -57,7 +56,7 @@ class MobileCompany extends React.PureComponent {
 
   };
 
-  filterActive = () => {
+  activeClients = () => {
     if (!this.state.allclients)
       this.state.allclients = [...this.state.clients];
     let filterClients = this.state.allclients.filter(client => {
@@ -67,7 +66,7 @@ class MobileCompany extends React.PureComponent {
     this.setState({ clients: filterClients })
   };
 
-  filterInactive = () => {
+  inactivClients = () => {
     if (!this.state.allclients)
       this.state.allclients = [...this.state.clients];
     let filterClients = this.state.allclients.filter(client => {
@@ -79,14 +78,12 @@ class MobileCompany extends React.PureComponent {
 
   saveChangesNewClient = (newName, newBalance, id) => {
     let newClientsA = [...this.state.allclients, { id: id, fio: newName, balance: newBalance }];
-
-    console.log(newClientsA);
     if (!this.state.allclients)
       this.state.allclients = newClientsA;
     this.setState({ clients: newClientsA, mode: null, allclients: newClientsA })
   };
 
-  sageChangesEditClient = (client, newName, newBalance) => {
+  saveChangesEditClient = (client, newName, newBalance) => {
     let newClientsA = [...this.state.clients];
     let indexChangedClient = newClientsA.indexOf(client);
     let changedClient = { id: newClientsA[indexChangedClient].id, fio: newName, balance: newBalance };
@@ -103,7 +100,7 @@ class MobileCompany extends React.PureComponent {
 
   setName2 = () => {
     this.setState({ name: 'Velcom' });
-  };
+};
 
   showAllClients = () => {
     this.setState({ clients: this.state.allclients });
@@ -130,9 +127,9 @@ class MobileCompany extends React.PureComponent {
               {clientsCode}
             </tbody>
           </table>
-          <button onClick={this.filterActive}>Активные клиенты</button>
+          <button onClick={this.activeClients}>Активные клиенты</button>
           <br/>
-          <button onClick={this.filterInactive}>Заблокированные клиенты</button>
+          <button onClick={this.inactivClients}>Заблокированные клиенты</button>
           <br/>
           <button onClick={this.showAllClients}>Все клиенты</button>
           <br/>
@@ -141,7 +138,7 @@ class MobileCompany extends React.PureComponent {
             <MobileAddNewClient />
           }
           {(this.state.mode == 2) &&
-            <MobileEditForm client={this.state.selectedClient} />
+            <MobileEditClient client={this.state.selectedClient} />
           }
         </div>
       </div>
