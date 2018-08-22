@@ -4,7 +4,7 @@ import '../css/styles.css';
 import Paper from 'material-ui/Paper';
 
 const skincare_ingredients_to_avoid = ['глутамат натрия', 'нитрит натрия', 'аспартам', 'бензоат натрия',
-    'формальдегид', 'сульфиты', 'E103', 'E107', 'E125', 'E127', 'E128', 'E140', 'E153'];
+    'формальдегид', 'сульфиты', 'Е103', 'E107', 'E125', 'E127', 'E128', 'E140', 'E153'];
 
 const getHighlightedText = (text, higlight) => {
     let re = '(' + higlight.join('|') + ')';

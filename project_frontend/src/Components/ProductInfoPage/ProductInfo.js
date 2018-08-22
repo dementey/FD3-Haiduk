@@ -20,7 +20,7 @@ class ProductInfo extends React.Component {
                     <div className="row">
                         <div className="col-5">
                             <a href={item.url} target="_blank">
-                                <Tooltip id={item.name} title="Visit Sephora Page" placement="right-end">
+                                <Tooltip id={item.name} title="Посетить мою страницу" placement="right-end">
                                     <img className="img-thumbnail" src={imageUrl}
                                         style={{ width: '100%', height: 'auto' }}
                                         alt="Product" />
@@ -41,7 +41,7 @@ class ProductInfo extends React.Component {
                                 {item.price}
                             </Typography>
                             <Typography variant="caption" gutterBottom={true}>
-                                {item.love_count} loves
+                                {item.love_count} покупателям понравилось
                             </Typography>
                             {
                                 item.ingredients[0] === 'None' ?
