@@ -1,0 +1,14 @@
+.home-box {
+    padding: 20px;
+    max-width: 100%;
+    position: relative;
+    top: 25px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.home-logo {
+    max-width: 100%;
+    align-self: center;
+}

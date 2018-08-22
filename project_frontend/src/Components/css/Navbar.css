@@ -1,0 +1,40 @@
+.nav-bar-pink {
+    background-color: blueviolet;
+    padding: 0px;
+
+}
+
+li.nav-li {
+    position: relative;
+    list-style-type: none;
+    line-height: 1;
+    transition: 0.2s all linear;
+    cursor: pointer;
+}
+
+li.nav-li:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 100%;
+    width: 0;
+    height: 100%;
+    border-bottom: 2px solid #000;
+    transition: 0.2s all linear;
+}
+
+li.nav-li:hover::before {
+    width: 100%;
+    top: 0;
+    left: 0;
+    transition-delay: 0.1s;
+    border-bottom-color: #000;
+}
+
+li.nav-li:hover ~ li:before {
+    left: 0;
+}
+
+.ActivePageLink {
+    font-weight: bold;
+}
