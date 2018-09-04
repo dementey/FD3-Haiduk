@@ -18,7 +18,7 @@ import './Main.css';
 
 const Main = () =>
     <Router>
-        <div className='container'>
+        <div className='container'> 
             <NavBar />
             <Switch>
                 <Route exact path="/" component={Home} />

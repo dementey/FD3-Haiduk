@@ -10,7 +10,7 @@ const toIngCheck = props => <Link to="/ingrecheck" {...props} />;
 //console.log('NavBar this.props ' + this.props);
 
 const NavBar = () =>
-    <nav className="navbar navbar-expand-lg navbar-light nav-bar-pink">
+    <nav class="navbar navbar-expand-lg navbar-light nav-bar-pink">
         <Button component={toHome}>
             Начало
         </Button>

@@ -34,7 +34,3 @@ li.nav-li:hover::before {
 li.nav-li:hover ~ li:before {
     left: 0;
 }
-
-.ActivePageLink {
-    font-weight: bold;
-}
