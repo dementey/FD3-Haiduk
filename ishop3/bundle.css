@@ -62,10 +62,14 @@ button {
 } /* Red */ 
 
 .newButton {
-
   background-color: #008CBA;
   right: 10;
 } /* Blue px*/
 
+.warning
+{
+  color: red;
+
+} 
 
 /*# sourceMappingURL=bundle.css.map*/

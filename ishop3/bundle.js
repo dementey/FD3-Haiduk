@@ -60,7 +60,7 @@
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 22);
+/******/ 	return __webpack_require__(__webpack_require__.s = 21);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -261,9 +261,9 @@ process.umask = function() { return 0; };
 /* WEBPACK VAR INJECTION */(function(process) {
 
 if (process.env.NODE_ENV === 'production') {
-  module.exports = __webpack_require__(23);
+  module.exports = __webpack_require__(22);
 } else {
-  module.exports = __webpack_require__(24);
+  module.exports = __webpack_require__(23);
 }
 
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
@@ -566,11 +566,11 @@ if (process.env.NODE_ENV !== 'production') {
   // By explicitly using `prop-types` you are opting into new development behavior.
   // http://fb.me/prop-types-in-prod
   var throwOnDirectAccess = true;
-  module.exports = __webpack_require__(37)(isValidElement, throwOnDirectAccess);
+  module.exports = __webpack_require__(36)(isValidElement, throwOnDirectAccess);
 } else {
   // By explicitly using `prop-types` you are opting into new production behavior.
   // http://fb.me/prop-types-in-prod
-  module.exports = __webpack_require__(39)();
+  module.exports = __webpack_require__(38)();
 }
 
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
@@ -1156,7 +1156,7 @@ module.exports = shallowEqual;
  * 
  */
 
-var isTextNode = __webpack_require__(28);
+var isTextNode = __webpack_require__(27);
 
 /*eslint-disable no-bitwise */
 
@@ -1214,45 +1214,23 @@ module.exports = emptyObject;
 "use strict";
 
 
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.voteEvents = undefined;
-
-var _events = __webpack_require__(41);
-
-var voteEvents = new _events.EventEmitter();
-// в потоке voteEvents будут все события, связанные с голосованием
-// событие "EAnswerClicked" - кликнут вариант ответа, его сэмиттирует VotesAnswer и примет VotesBlock
-// событие "EFreeAnswerTextChanged" - изменён текст свободного ответа, его сэмиттирует VotesAnswer и примет VotesBlock
-// лучше работать не с текстовыми литералами, а объявить переменные с соответствующими значениями
-
-exports.voteEvents = voteEvents;
-
-/***/ }),
-/* 22 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
 var _react = __webpack_require__(1);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _reactDom = __webpack_require__(26);
+var _reactDom = __webpack_require__(25);
 
 var _reactDom2 = _interopRequireDefault(_reactDom);
 
-var _ishop = __webpack_require__(36);
+var _ishop = __webpack_require__(35);
 
 var _ishop2 = _interopRequireDefault(_ishop);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var shopText = 'ishop (интернет-магазин)';
-var titleHash = __webpack_require__(43);
-var productsArr = __webpack_require__(44);
+var titleHash = __webpack_require__(42);
+var productsArr = __webpack_require__(43);
 
 _reactDom2.default.render(_react2.default.createElement(_ishop2.default, {
   shop: shopText,
@@ -1260,7 +1238,7 @@ _reactDom2.default.render(_react2.default.createElement(_ishop2.default, {
   title: titleHash }), document.getElementById('container'));
 
 /***/ }),
-/* 23 */
+/* 22 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1289,7 +1267,7 @@ assign:k}},Y={default:X},Z=Y&&X||Y;module.exports=Z.default?Z.default:Z;
 
 
 /***/ }),
-/* 24 */
+/* 23 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1313,7 +1291,7 @@ if (process.env.NODE_ENV !== "production") {
 var _assign = __webpack_require__(10);
 var invariant = __webpack_require__(11);
 var emptyObject = __webpack_require__(12);
-var warning = __webpack_require__(25);
+var warning = __webpack_require__(24);
 var emptyFunction = __webpack_require__(2);
 var checkPropTypes = __webpack_require__(3);
 
@@ -2783,7 +2761,7 @@ module.exports = react;
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
 
 /***/ }),
-/* 25 */
+/* 24 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2852,7 +2830,7 @@ module.exports = warning;
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
 
 /***/ }),
-/* 26 */
+/* 25 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2890,15 +2868,15 @@ if (process.env.NODE_ENV === 'production') {
   // DCE check should happen before ReactDOM bundle executes so that
   // DevTools can report bad minification during injection.
   checkDCE();
-  module.exports = __webpack_require__(27);
+  module.exports = __webpack_require__(26);
 } else {
-  module.exports = __webpack_require__(30);
+  module.exports = __webpack_require__(29);
 }
 
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
 
 /***/ }),
-/* 27 */
+/* 26 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -3145,7 +3123,7 @@ var Ai={default:vi},Bi=Ai&&vi||Ai;module.exports=Bi.default?Bi.default:Bi;
 
 
 /***/ }),
-/* 28 */
+/* 27 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -3160,7 +3138,7 @@ var Ai={default:vi},Bi=Ai&&vi||Ai;module.exports=Bi.default?Bi.default:Bi;
  * @typechecks
  */
 
-var isNode = __webpack_require__(29);
+var isNode = __webpack_require__(28);
 
 /**
  * @param {*} object The object to check.
@@ -3173,7 +3151,7 @@ function isTextNode(object) {
 module.exports = isTextNode;
 
 /***/ }),
-/* 29 */
+/* 28 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -3201,7 +3179,7 @@ function isNode(object) {
 module.exports = isNode;
 
 /***/ }),
-/* 30 */
+/* 29 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -3224,7 +3202,7 @@ if (process.env.NODE_ENV !== "production") {
 
 var invariant = __webpack_require__(14);
 var React = __webpack_require__(1);
-var warning = __webpack_require__(31);
+var warning = __webpack_require__(30);
 var ExecutionEnvironment = __webpack_require__(15);
 var _assign = __webpack_require__(16);
 var emptyFunction = __webpack_require__(7);
@@ -3233,8 +3211,8 @@ var getActiveElement = __webpack_require__(17);
 var shallowEqual = __webpack_require__(18);
 var containsNode = __webpack_require__(19);
 var emptyObject = __webpack_require__(20);
-var hyphenateStyleName = __webpack_require__(32);
-var camelizeStyleName = __webpack_require__(34);
+var hyphenateStyleName = __webpack_require__(31);
+var camelizeStyleName = __webpack_require__(33);
 
 // Relying on the `invariant()` implementation lets us
 // have preserve the format and params in the www builds.
@@ -20639,7 +20617,7 @@ module.exports = reactDom;
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
 
 /***/ }),
-/* 31 */
+/* 30 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -20708,7 +20686,7 @@ module.exports = warning;
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
 
 /***/ }),
-/* 32 */
+/* 31 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -20723,7 +20701,7 @@ module.exports = warning;
 
 
 
-var hyphenate = __webpack_require__(33);
+var hyphenate = __webpack_require__(32);
 
 var msPattern = /^ms-/;
 
@@ -20750,7 +20728,7 @@ function hyphenateStyleName(string) {
 module.exports = hyphenateStyleName;
 
 /***/ }),
-/* 33 */
+/* 32 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -20786,7 +20764,7 @@ function hyphenate(string) {
 module.exports = hyphenate;
 
 /***/ }),
-/* 34 */
+/* 33 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -20801,7 +20779,7 @@ module.exports = hyphenate;
 
 
 
-var camelize = __webpack_require__(35);
+var camelize = __webpack_require__(34);
 
 var msPattern = /^-ms-/;
 
@@ -20829,7 +20807,7 @@ function camelizeStyleName(string) {
 module.exports = camelizeStyleName;
 
 /***/ }),
-/* 35 */
+/* 34 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -20864,7 +20842,7 @@ function camelize(string) {
 module.exports = camelize;
 
 /***/ }),
-/* 36 */
+/* 35 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -20886,15 +20864,13 @@ var _propTypes2 = _interopRequireDefault(_propTypes);
 
 __webpack_require__(9);
 
-var _product = __webpack_require__(40);
+var _product = __webpack_require__(39);
 
 var _product2 = _interopRequireDefault(_product);
 
-var _card = __webpack_require__(42);
+var _card = __webpack_require__(40);
 
 var _card2 = _interopRequireDefault(_card);
-
-var _events = __webpack_require__(21);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -20919,40 +20895,54 @@ var IShop = function (_React$Component) {
     }
 
     return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = IShop.__proto__ || Object.getPrototypeOf(IShop)).call.apply(_ref, [this].concat(args))), _this), _this.state = {
-      isSelected: '',
-      curentCard: ''
-    }, _this.componentDidMount = function () {
-      _events.voteEvents.addListener('EAnswerClicked', function (a) {
-        return console.log(a);
-      });
-    }, _this.componentWillUnmount = function () {
-      _events.voteEvents.removeListener('EAnswerClicked', function (a) {
-        return console.log(a);
-      });
-    }, _this.isSelectFunc = function (cb) {
-      _this.setState({ isSelected: cb });
+      isSelected: false,
+      curentCard: '',
+      disableEnableValue: false,
+      productsState: _this.props.products,
+      newProduct: false
+    }, _this.isSelectFunc = function (curProd, del, unsel) {
+
+      if (del) {
+
+        if (confirm('Вы желаете удалить товар?')) {
+          var arr = _this.state.productsState;
+          delete arr[curProd.num - 1];
+          _this.setState({ productsState: arr });
+          _this.setState({ isSelected: false });
+          _this.setState({ newProduct: false });
+        } else null;
+      } else {
+        //this.setState({ isSelected: curProd.num });
+        _this.setState({ isSelected: true });
+        _this.setState({ curentCard: curProd });
+      };
     }, _this.isNew = function (EO) {
       EO.stopPropagation();
-      //console.log(EO.currentTarget.className);
     }, _this.isCard = function (hash) {
-      _this.setState({ curentCard: hash });
-      //console.log(this.state.curentCard)
+      var isButtonEditClicked = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : false;
+
+      _this.setState({ disableEnableValue: isButtonEditClicked });
+    }, _this.cbCard = function (editedProduct, unselectCard, addProduct) {
+      var aaa = _this.state.productsState;
+      if (!addProduct) {
+        aaa[editedProduct.code - 1] = editedProduct;
+      } else aaa.push(editedProduct);
+      _this.setState({ productsState: aaa });
+      _this.setState({ isSelected: unselectCard });
+      _this.setState({ newProduct: addProduct });
+    }, _this.isNew = function (EO) {
+      //this.setState(() => { return { newProduct: true }; });
+      _this.setState({ newProduct: true });
+      _this.setState({ disableEnableValue: true });
+      _this.setState({ curentCard: { code: _this.props.products.length + 1, name: '', price: 0, url: '', amount: 0 } });
     }, _temp), _possibleConstructorReturn(_this, _ret);
   }
-
-  // componentWillReceiveProps = (newProps) => { console.log('componentWillReceiveProps ishop'); };
-  // componentWillUpdate = () => { console.log('componentWillUpdate ishop'); };
-  // componentDidUpdate = (oldProps, oldState) => { console.log('componentDidUpdateishop ishop' ); };
-  // componentWillMount = () => { console.log('componentWillMount ishop'); };
-  // componentDidMount = () => { console.log('componentDidMount ishop'); };
-  // componentWillUnmount = () => { console.log('componentWillUnmount ishop'); };
 
   _createClass(IShop, [{
     key: 'render',
     value: function render() {
       var _this2 = this;
 
-      //console.log(this.state.curentCard);
       return _react2.default.createElement(
         'div',
         null,
@@ -21003,7 +20993,7 @@ var IShop = function (_React$Component) {
           _react2.default.createElement(
             'tbody',
             { className: 'Products' },
-            this.props.products.map(function (v) {
+            this.state.productsState.map(function (v) {
               return _react2.default.createElement(_product2.default, { key: v.code,
                 num: v.code,
                 name: v.name,
@@ -21011,10 +21001,9 @@ var IShop = function (_React$Component) {
                 url: v.url,
                 amount: v.amount,
                 cbIsSelectFunc: _this2.isSelectFunc,
-                cbIsSelected: _this2.state.isSelected == v.code ? true : false,
+                isClicked: _this2.state.curentCard.num == v.code ? true : false,
                 cbIsCard: _this2.isCard,
-                cbIsSelected2: _this2.state.isSelected == v.code ? v.code : null
-              });
+                newProduct: _this2.state.newProduct });
             })
           )
         ),
@@ -21023,11 +21012,12 @@ var IShop = function (_React$Component) {
           { className: 'newButton', onClick: this.isNew },
           '\u041D\u043E\u0432\u044B\u0439 \u0442\u043E\u0432\u0430\u0440'
         ),
-        this.state.isSelected ? _react2.default.createElement(_card2.default, { className: 'card',
-          name: this.state.curentCard.name,
-          price: this.state.curentCard.price,
-          url: this.state.curentCard.url,
-          amount: this.state.curentCard.amount
+        this.state.isSelected || this.state.newProduct ? _react2.default.createElement(_card2.default, { className: 'card', key: 100 + this.state.isSelected + this.state.newProduct && 10,
+          curentCard: this.state.curentCard,
+          disableEnableValue: this.state.disableEnableValue,
+          cbCard: this.cbCard,
+          newProduct: this.state.newProduct,
+          allProducts: this.props.products.length
         }) : null
       );
     }
@@ -21055,7 +21045,7 @@ IShop.propTypes = {
 exports.default = IShop;
 
 /***/ }),
-/* 37 */
+/* 36 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -21071,7 +21061,7 @@ exports.default = IShop;
 var emptyFunction = __webpack_require__(5);
 var invariant = __webpack_require__(4);
 var warning = __webpack_require__(13);
-var assign = __webpack_require__(38);
+var assign = __webpack_require__(37);
 
 var ReactPropTypesSecret = __webpack_require__(6);
 var checkPropTypes = __webpack_require__(3);
@@ -21605,7 +21595,7 @@ module.exports = function(isValidElement, throwOnDirectAccess) {
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
 
 /***/ }),
-/* 38 */
+/* 37 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -21702,7 +21692,7 @@ module.exports = shouldUseNative() ? Object.assign : function (target, source) {
 
 
 /***/ }),
-/* 39 */
+/* 38 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -21767,7 +21757,7 @@ module.exports = function() {
 
 
 /***/ }),
-/* 40 */
+/* 39 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -21788,8 +21778,6 @@ var _propTypes = __webpack_require__(8);
 var _propTypes2 = _interopRequireDefault(_propTypes);
 
 __webpack_require__(9);
-
-var _events = __webpack_require__(21);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -21813,42 +21801,25 @@ var Product = function (_React$Component) {
             args[_key] = arguments[_key];
         }
 
-        return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = Product.__proto__ || Object.getPrototypeOf(Product)).call.apply(_ref, [this].concat(args))), _this), _this.state = {
-            curentIsSelect: false,
-            cssCurent: _this.props.num
-        }, _this.isSelected = function (EO) {
+        return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = Product.__proto__ || Object.getPrototypeOf(Product)).call.apply(_ref, [this].concat(args))), _this), _this.isSelected = function (EO) {
             EO.stopPropagation();
-            _this.props.cbIsSelectFunc(EO.currentTarget.className);
-            _this.props.cbIsCard(_this.props);
-            _this.selectCSS(_this.state.num);
-            _events.voteEvents.emit('EAnswerClicked', _this.props);
+            _this.props.cbIsSelectFunc(_this.props);
+            if (!_this.props.isClicked) _this.props.cbIsCard(_this.props, false);
         }, _this.isEdit = function (EO) {
             EO.stopPropagation();
-            console.log(EO.currentTarget.className);
+            if (_this.props.isClicked) _this.props.cbIsCard(_this.props, true);
         }, _this.isDelete = function (EO) {
             EO.stopPropagation();
-            console.log(EO.currentTarget.className);
-        }, _this.selectCSS = function () {
-
-            if (_this.props.cbIsSelected) _this.setState(function (stateNum) {
-                return { cssCurent: stateNum + ' selected' };
-            });
+            _this.props.cbIsSelectFunc(_this.props, true, false);
         }, _temp), _possibleConstructorReturn(_this, _ret);
     }
-
-    // componentWillReceiveProps = (newProps) => { console.log('componentWillReceiveProps product'); };
-    // componentWillUpdate = () => { console.log('componentWillUpdate product'); };
-    // componentDidUpdate = (oldProps, oldState) => { console.log('componentDidUpdateishop product'); };
-    // componentWillMount = () => { console.log('componentWillMount product'); };
-    // componentDidMount = () => { console.log('componentDidMount product'); };
-    // componentWillUnmount = () => { console.log('componentWillUnmount product'); };
 
     _createClass(Product, [{
         key: 'render',
         value: function render() {
             return _react2.default.createElement(
                 'tr',
-                { className: this.props.cbIsSelected ? this.props.num + ' selected' : this.props.num, onClick: this.isSelected },
+                { className: this.props.isClicked ? this.props.num + ' selected' : this.props.num, onClick: this.isSelected },
                 _react2.default.createElement(
                     'td',
                     null,
@@ -21859,8 +21830,8 @@ var Product = function (_React$Component) {
                     null,
                     _react2.default.createElement(
                         'a',
-                        { href: this.props.url },
-                        ' \u0441c\u044B\u043B\u043A\u0430 \u043D\u0430 \u0444\u043E\u0442\u043E'
+                        { href: '#' + this.props.num },
+                        this.props.url
                     )
                 ),
                 _react2.default.createElement(
@@ -21902,8 +21873,8 @@ Product.propTypes = {
     price: _propTypes2.default.number.isRequired,
     url: _propTypes2.default.string.isRequired,
     amount: _propTypes2.default.number.isRequired,
-    cbIsSelectFunc: _propTypes2.default.func.isRequired,
-    cbIsSelected: _propTypes2.default.bool.isRequired,
+    cbIsSelectFunc: _propTypes2.default.func.isRequired, // callBack функция при вызове которой мы передаем в родительский модуль выбранный товар
+    isClicked: _propTypes2.default.bool.isRequired,
     cbIsCard: _propTypes2.default.func.isRequired
 };
 ;
@@ -21911,315 +21882,7 @@ Product.propTypes = {
 exports.default = Product;
 
 /***/ }),
-/* 41 */
-/***/ (function(module, exports) {
-
-// Copyright Joyent, Inc. and other Node contributors.
-//
-// Permission is hereby granted, free of charge, to any person obtaining a
-// copy of this software and associated documentation files (the
-// "Software"), to deal in the Software without restriction, including
-// without limitation the rights to use, copy, modify, merge, publish,
-// distribute, sublicense, and/or sell copies of the Software, and to permit
-// persons to whom the Software is furnished to do so, subject to the
-// following conditions:
-//
-// The above copyright notice and this permission notice shall be included
-// in all copies or substantial portions of the Software.
-//
-// THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS
-// OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
-// MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN
-// NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM,
-// DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR
-// OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE
-// USE OR OTHER DEALINGS IN THE SOFTWARE.
-
-function EventEmitter() {
-  this._events = this._events || {};
-  this._maxListeners = this._maxListeners || undefined;
-}
-module.exports = EventEmitter;
-
-// Backwards-compat with node 0.10.x
-EventEmitter.EventEmitter = EventEmitter;
-
-EventEmitter.prototype._events = undefined;
-EventEmitter.prototype._maxListeners = undefined;
-
-// By default EventEmitters will print a warning if more than 10 listeners are
-// added to it. This is a useful default which helps finding memory leaks.
-EventEmitter.defaultMaxListeners = 10;
-
-// Obviously not all Emitters should be limited to 10. This function allows
-// that to be increased. Set to zero for unlimited.
-EventEmitter.prototype.setMaxListeners = function(n) {
-  if (!isNumber(n) || n < 0 || isNaN(n))
-    throw TypeError('n must be a positive number');
-  this._maxListeners = n;
-  return this;
-};
-
-EventEmitter.prototype.emit = function(type) {
-  var er, handler, len, args, i, listeners;
-
-  if (!this._events)
-    this._events = {};
-
-  // If there is no 'error' event listener then throw.
-  if (type === 'error') {
-    if (!this._events.error ||
-        (isObject(this._events.error) && !this._events.error.length)) {
-      er = arguments[1];
-      if (er instanceof Error) {
-        throw er; // Unhandled 'error' event
-      } else {
-        // At least give some kind of context to the user
-        var err = new Error('Uncaught, unspecified "error" event. (' + er + ')');
-        err.context = er;
-        throw err;
-      }
-    }
-  }
-
-  handler = this._events[type];
-
-  if (isUndefined(handler))
-    return false;
-
-  if (isFunction(handler)) {
-    switch (arguments.length) {
-      // fast cases
-      case 1:
-        handler.call(this);
-        break;
-      case 2:
-        handler.call(this, arguments[1]);
-        break;
-      case 3:
-        handler.call(this, arguments[1], arguments[2]);
-        break;
-      // slower
-      default:
-        args = Array.prototype.slice.call(arguments, 1);
-        handler.apply(this, args);
-    }
-  } else if (isObject(handler)) {
-    args = Array.prototype.slice.call(arguments, 1);
-    listeners = handler.slice();
-    len = listeners.length;
-    for (i = 0; i < len; i++)
-      listeners[i].apply(this, args);
-  }
-
-  return true;
-};
-
-EventEmitter.prototype.addListener = function(type, listener) {
-  var m;
-
-  if (!isFunction(listener))
-    throw TypeError('listener must be a function');
-
-  if (!this._events)
-    this._events = {};
-
-  // To avoid recursion in the case that type === "newListener"! Before
-  // adding it to the listeners, first emit "newListener".
-  if (this._events.newListener)
-    this.emit('newListener', type,
-              isFunction(listener.listener) ?
-              listener.listener : listener);
-
-  if (!this._events[type])
-    // Optimize the case of one listener. Don't need the extra array object.
-    this._events[type] = listener;
-  else if (isObject(this._events[type]))
-    // If we've already got an array, just append.
-    this._events[type].push(listener);
-  else
-    // Adding the second element, need to change to array.
-    this._events[type] = [this._events[type], listener];
-
-  // Check for listener leak
-  if (isObject(this._events[type]) && !this._events[type].warned) {
-    if (!isUndefined(this._maxListeners)) {
-      m = this._maxListeners;
-    } else {
-      m = EventEmitter.defaultMaxListeners;
-    }
-
-    if (m && m > 0 && this._events[type].length > m) {
-      this._events[type].warned = true;
-      console.error('(node) warning: possible EventEmitter memory ' +
-                    'leak detected. %d listeners added. ' +
-                    'Use emitter.setMaxListeners() to increase limit.',
-                    this._events[type].length);
-      if (typeof console.trace === 'function') {
-        // not supported in IE 10
-        console.trace();
-      }
-    }
-  }
-
-  return this;
-};
-
-EventEmitter.prototype.on = EventEmitter.prototype.addListener;
-
-EventEmitter.prototype.once = function(type, listener) {
-  if (!isFunction(listener))
-    throw TypeError('listener must be a function');
-
-  var fired = false;
-
-  function g() {
-    this.removeListener(type, g);
-
-    if (!fired) {
-      fired = true;
-      listener.apply(this, arguments);
-    }
-  }
-
-  g.listener = listener;
-  this.on(type, g);
-
-  return this;
-};
-
-// emits a 'removeListener' event iff the listener was removed
-EventEmitter.prototype.removeListener = function(type, listener) {
-  var list, position, length, i;
-
-  if (!isFunction(listener))
-    throw TypeError('listener must be a function');
-
-  if (!this._events || !this._events[type])
-    return this;
-
-  list = this._events[type];
-  length = list.length;
-  position = -1;
-
-  if (list === listener ||
-      (isFunction(list.listener) && list.listener === listener)) {
-    delete this._events[type];
-    if (this._events.removeListener)
-      this.emit('removeListener', type, listener);
-
-  } else if (isObject(list)) {
-    for (i = length; i-- > 0;) {
-      if (list[i] === listener ||
-          (list[i].listener && list[i].listener === listener)) {
-        position = i;
-        break;
-      }
-    }
-
-    if (position < 0)
-      return this;
-
-    if (list.length === 1) {
-      list.length = 0;
-      delete this._events[type];
-    } else {
-      list.splice(position, 1);
-    }
-
-    if (this._events.removeListener)
-      this.emit('removeListener', type, listener);
-  }
-
-  return this;
-};
-
-EventEmitter.prototype.removeAllListeners = function(type) {
-  var key, listeners;
-
-  if (!this._events)
-    return this;
-
-  // not listening for removeListener, no need to emit
-  if (!this._events.removeListener) {
-    if (arguments.length === 0)
-      this._events = {};
-    else if (this._events[type])
-      delete this._events[type];
-    return this;
-  }
-
-  // emit removeListener for all listeners on all events
-  if (arguments.length === 0) {
-    for (key in this._events) {
-      if (key === 'removeListener') continue;
-      this.removeAllListeners(key);
-    }
-    this.removeAllListeners('removeListener');
-    this._events = {};
-    return this;
-  }
-
-  listeners = this._events[type];
-
-  if (isFunction(listeners)) {
-    this.removeListener(type, listeners);
-  } else if (listeners) {
-    // LIFO order
-    while (listeners.length)
-      this.removeListener(type, listeners[listeners.length - 1]);
-  }
-  delete this._events[type];
-
-  return this;
-};
-
-EventEmitter.prototype.listeners = function(type) {
-  var ret;
-  if (!this._events || !this._events[type])
-    ret = [];
-  else if (isFunction(this._events[type]))
-    ret = [this._events[type]];
-  else
-    ret = this._events[type].slice();
-  return ret;
-};
-
-EventEmitter.prototype.listenerCount = function(type) {
-  if (this._events) {
-    var evlistener = this._events[type];
-
-    if (isFunction(evlistener))
-      return 1;
-    else if (evlistener)
-      return evlistener.length;
-  }
-  return 0;
-};
-
-EventEmitter.listenerCount = function(emitter, type) {
-  return emitter.listenerCount(type);
-};
-
-function isFunction(arg) {
-  return typeof arg === 'function';
-}
-
-function isNumber(arg) {
-  return typeof arg === 'number';
-}
-
-function isObject(arg) {
-  return typeof arg === 'object' && arg !== null;
-}
-
-function isUndefined(arg) {
-  return arg === void 0;
-}
-
-
-/***/ }),
-/* 42 */
+/* 40 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -22241,6 +21904,8 @@ var _propTypes2 = _interopRequireDefault(_propTypes);
 
 __webpack_require__(9);
 
+var _validate = __webpack_require__(41);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -22253,9 +21918,59 @@ var Card = function (_React$Component) {
     _inherits(Card, _React$Component);
 
     function Card() {
+        var _ref;
+
+        var _temp, _this, _ret;
+
         _classCallCheck(this, Card);
 
-        return _possibleConstructorReturn(this, (Card.__proto__ || Object.getPrototypeOf(Card)).apply(this, arguments));
+        for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
+            args[_key] = arguments[_key];
+        }
+
+        return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = Card.__proto__ || Object.getPrototypeOf(Card)).call.apply(_ref, [this].concat(args))), _this), _this.state = {
+            editNum: _this.props.curentCard.num,
+            editName: _this.props.curentCard.name,
+            editUrl: _this.props.curentCard.url,
+            editPrice: _this.props.curentCard.price,
+            editAmount: _this.props.curentCard.amount,
+            editNumValidate: true,
+            editUrlValidate: true,
+            editPriceValidate: true,
+            editAmountValidate: true,
+            newProductState: false
+        }, _this.isEdit = function (EO) {
+            if (EO.currentTarget.className == 'editName') {
+                _this.setState({ editName: EO.currentTarget.value });
+                _this.setState({ editNumValidate: (0, _validate.validateText)(EO.currentTarget.value) });
+            } else if (EO.currentTarget.className == 'editUrl') {
+                _this.setState({ editUrl: EO.currentTarget.value });
+                _this.setState({ editUrlValidate: (0, _validate.validateUrl)(EO.currentTarget.value) });
+            } else if (EO.currentTarget.className == 'editPrice') {
+                _this.setState({ editPrice: EO.currentTarget.value });
+                _this.setState({ editPriceValidate: (0, _validate.validateNumber)(Number(EO.currentTarget.value)) });
+            } else if (EO.currentTarget.className == 'editAmount') {
+                _this.setState({ editAmount: EO.currentTarget.value });
+                _this.setState({ editAmountValidate: (0, _validate.validateNumber)(Number(EO.currentTarget.value)) });
+            }
+        }, _this.isSave = function (EO) {
+            if (_this.state.editNumValidate && _this.state.editUrlValidate && _this.state.editPriceValidate && _this.state.editAmountValidate) _this.props.cbCard({ "code": _this.state.editNum, "name": _this.state.editName, "url": _this.state.editUrl, "price": Number(_this.state.editPrice), "amount": Number(_this.state.editAmount) }, false);
+        }, _this.isСancel = function (EO) {
+            _this.props.cbCard({ "code": _this.props.editNum, "name": _this.props.editName, "url": _this.props.editUrl, "price": Number(_this.props.editPrice), "amount": Number(_this.props.editAmount) }, false);
+        }, _this.isNew = function (EO) {
+            _this.setState(function () {
+                return { newProductState: true };
+            });
+            _this.props.cbCard({ "code": _this.props.editNum, "name": _this.props.editName, "url": _this.props.editUrl, "price": Number(_this.props.editPrice), "amount": Number(_this.props.editAmount) }, false, true);
+        }, _this.isAdd = function (EO) {
+
+            if ((0, _validate.validateText)(_this.state.editName) && (0, _validate.validateUrl)(_this.state.editUrl) && (0, _validate.validateNumber)(Number(_this.state.editPrice)) && (0, _validate.validateNumber)(Number(_this.state.editAmount))) _this.props.cbCard({ "code": _this.props.allProducts + 1, "name": _this.state.editName, "url": _this.state.editUrl, "price": Number(_this.state.editPrice), "amount": Number(_this.state.editAmount) }, false);else {
+                _this.setState({ editNumValidate: (0, _validate.validateUrl)(_this.state.editName) });
+                _this.setState({ editUrlValidate: (0, _validate.validateUrl)(_this.state.editUrl) });
+                _this.setState({ editPriceValidate: (0, _validate.validateNumber)(_this.state.editPrice) });
+                _this.setState({ editAmountValidate: (0, _validate.validateNumber)(_this.state.editAmount) });
+            }
+        }, _temp), _possibleConstructorReturn(_this, _ret);
     }
 
     _createClass(Card, [{
@@ -22263,7 +21978,7 @@ var Card = function (_React$Component) {
         value: function render() {
             return _react2.default.createElement(
                 'table',
-                { className: 'cardTable' },
+                { className: 'cardTable', key: 10 * this.props.curentCard.num },
                 _react2.default.createElement(
                     'tbody',
                     null,
@@ -22273,27 +21988,92 @@ var Card = function (_React$Component) {
                         _react2.default.createElement(
                             'td',
                             null,
-                            this.props.name
-                        ),
-                        _react2.default.createElement(
-                            'td',
-                            null,
-                            _react2.default.createElement(
-                                'a',
-                                { href: this.props.url },
-                                ' \u0441c\u044B\u043B\u043A\u0430 \u043D\u0430 \u0444\u043E\u0442\u043E'
+                            this.props.newProduct && _react2.default.createElement(
+                                'div',
+                                null,
+                                '\u0412\u0432\u0435\u0434\u0438\u0442\u0435 \u043D\u0430\u0438\u043C\u0435\u043D\u043E\u0432\u0430\u043D\u0438\u0435 \u0442\u043E\u0432\u0430\u0440\u0430'
+                            ),
+                            _react2.default.createElement('input', { type: 'text', className: 'editName', defaultValue: !this.props.newProduct ? this.props.curentCard.name : '', disabled: !this.props.disableEnableValue, onChange: this.isEdit }),
+                            !this.state.editNumValidate && _react2.default.createElement(
+                                'div',
+                                { className: 'warning' },
+                                '\u041F\u043E\u0432\u0442\u043E\u0440\u0438\u0442\u0435 \u043F\u043E\u043F\u044B\u0442\u043A\u0443 \u0432\u0432\u043E\u0434\u0430 \u043D\u0430 \u0440\u0443\u0441\u0441\u043A\u043E\u043C \u044F\u0437\u044B\u043A\u0435'
                             )
                         ),
                         _react2.default.createElement(
                             'td',
                             null,
-                            ' ',
-                            this.props.price
+                            this.props.newProduct && _react2.default.createElement(
+                                'div',
+                                null,
+                                '\u0412\u0432\u0435\u0434\u0438\u0442\u0435 URL \u0444\u043E\u0442\u043E\u0433\u0440\u0430\u0444\u0438\u0438'
+                            ),
+                            _react2.default.createElement('input', { type: 'text', className: 'editUrl', defaultValue: !this.props.newProduct ? this.props.curentCard.url : '', disabled: !this.props.disableEnableValue, onChange: this.isEdit }),
+                            !this.state.editUrlValidate && _react2.default.createElement(
+                                'div',
+                                { className: 'warning' },
+                                '\u0412\u0432\u0435\u0434\u0438\u0442\u0435 \u043F\u043E\u0436\u0430\u043B\u0443\u0439\u0441\u0442\u0430 URL \u0432 \u0444\u043E\u0440\u043C\u0430\u0442\u0435 https://www.\u0432\u0430\u0448_\u0441\u0430\u0439\u0442.\u0434\u043E\u043C\u0435\u043D/'
+                            )
                         ),
                         _react2.default.createElement(
                             'td',
                             null,
-                            this.props.amount
+                            this.props.newProduct && _react2.default.createElement(
+                                'div',
+                                null,
+                                '\u0412\u0432\u0435\u0434\u0438\u0442\u0435 \u0441\u0442\u043E\u0438\u043C\u043E\u0441\u0442\u044C'
+                            ),
+                            _react2.default.createElement('input', { type: 'text', className: 'editPrice', defaultValue: !this.props.newProduct ? this.props.curentCard.price : '', disabled: !this.props.disableEnableValue, onChange: this.isEdit }),
+                            !this.state.editPriceValidate && _react2.default.createElement(
+                                'div',
+                                { className: 'warning' },
+                                '\u0412\u044B \u0432\u0432\u0435\u043B\u0438 \u043D\u0435 \u0447\u0438\u0441\u043B\u043E, \u043F\u043E\u0432\u0442\u043E\u0440\u0438\u0442\u0435 \u043F\u043E\u043F\u044B\u0442\u043A\u0443 \u0432\u0432\u043E\u0434\u0430'
+                            )
+                        ),
+                        _react2.default.createElement(
+                            'td',
+                            null,
+                            this.props.newProduct && _react2.default.createElement(
+                                'div',
+                                null,
+                                '\u0412\u0432\u0435\u0434\u0438\u0442\u0435 \u043A\u043E\u043B\u0438\u0447\u0435\u0441\u0442\u0432\u043E'
+                            ),
+                            _react2.default.createElement('input', { type: 'text', className: 'editAmount', defaultValue: !this.props.newProduct ? this.props.curentCard.amount : '', disabled: !this.props.disableEnableValue, onChange: this.isEdit }),
+                            !this.state.editAmountValidate && _react2.default.createElement(
+                                'div',
+                                { className: 'warning' },
+                                '\u0412\u044B \u0432\u0432\u0435\u043B\u0438 \u043D\u0435 \u0447\u0438\u0441\u043B\u043E, \u043F\u043E\u0432\u0442\u043E\u0440\u0438\u0442\u0435 \u043F\u043E\u043F\u044B\u0442\u043A\u0443 \u0432\u0432\u043E\u0434\u0430'
+                            )
+                        ),
+                        this.props.disableEnableValue && !this.props.newProduct && _react2.default.createElement(
+                            'td',
+                            null,
+                            _react2.default.createElement(
+                                'button',
+                                { className: 'editButton', onClick: this.isSave },
+                                'C\u043E\u0445\u0440\u0430\u043D\u0438\u0442\u044C'
+                            ),
+                            '\xA0',
+                            _react2.default.createElement(
+                                'button',
+                                { className: 'deleteButton', onClick: this.isСancel },
+                                '\u041E\u0442\u043C\u0435\u043D\u0430'
+                            )
+                        ),
+                        this.props.newProduct && _react2.default.createElement(
+                            'td',
+                            null,
+                            _react2.default.createElement(
+                                'button',
+                                { className: 'editButton', onClick: this.isAdd },
+                                '\u0434\u043E\u0431\u0430\u0432\u0438\u0442\u044C'
+                            ),
+                            '\xA0',
+                            _react2.default.createElement(
+                                'button',
+                                { className: 'deleteButton', onClick: this.isСancel },
+                                '\u041E\u0442\u043C\u0435\u043D\u0430'
+                            )
                         )
                     )
                 )
@@ -22305,27 +22085,71 @@ var Card = function (_React$Component) {
 }(_react2.default.Component);
 
 Card.propTypes = {
-    num: _propTypes2.default.number,
-    name: _propTypes2.default.string.isRequired,
-    price: _propTypes2.default.number.isRequired,
-    url: _propTypes2.default.string.isRequired,
-    amount: _propTypes2.default.number.isRequired
+    curentCard: _propTypes2.default.shape({
+        num: _propTypes2.default.number,
+        name: _propTypes2.default.string.isRequired,
+        url: _propTypes2.default.string.isRequired,
+        price: _propTypes2.default.number.isRequired,
+        amount: _propTypes2.default.number.isRequired
+    }),
+    disableEnableValue: _propTypes2.default.bool.isRequired,
+    cbCard: _propTypes2.default.func.isRequired,
+    newProduct: _propTypes2.default.bool,
+    allProducts: _propTypes2.default.number.isRequired
 };
 ;
 
 exports.default = Card;
 
 /***/ }),
-/* 43 */
+/* 41 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+function validateText(b) {
+  if (Boolean(b) === false || b == "" || typeof b == "undefined") return false;else {
+    var result = true,
+        resultAll;
+    for (var i = 0; i < b.length; i++) {
+      resultAll = result && (b.charCodeAt(i) < 1040 || b.charCodeAt(i) > 1103);
+    }return !resultAll;
+  }
+}
+
+function validateUrl(str) {
+
+  var regex = /(http|https):\/\/(\w+:{0,1}\w*)?(\S+)(:[0-9]+)?(\/|\/([\w#!:.?+=&%!\-\/]))?/;
+  if (!regex.test(str)) {
+    return false;
+  } else {
+    return true;
+  }
+}
+
+function validateNumber(a) {
+  if ((a instanceof Number || typeof a === 'number') && !isNaN(a) && a != 0) return true;else return false;
+};
+
+exports.validateText = validateText;
+exports.validateUrl = validateUrl;
+exports.validateNumber = validateNumber;
+
+/***/ }),
+/* 42 */
 /***/ (function(module, exports) {
 
 module.exports = {"code":0,"name":"Наименование","price":"Стоимость","url":"URL фотографии","amount":"Количество"}
 
 /***/ }),
-/* 44 */
+/* 43 */
 /***/ (function(module, exports) {
 
-module.exports = [{"code":1,"name":"Дрель","price":111,"url":"#url1","amount":10},{"code":2,"name":"Шуруповерт","price":222,"url":"#url2","amount":20},{"code":3,"name":"Триммер","price":333,"url":"#url3","amount":30},{"code":4,"name":"Перфоратор","price":444,"url":"#url4","amount":40}]
+module.exports = [{"code":1,"name":"Дрель","price":111,"url":"http://ishop3.by/1","amount":10},{"code":2,"name":"Шуруповерт","price":222,"url":"http://ishop3.by/2","amount":20},{"code":3,"name":"Триммер","price":333,"url":"http://ishop3.by/3","amount":30},{"code":4,"name":"Перфоратор","price":444,"url":"http://ishop3.by/4","amount":40}]
 
 /***/ })
 /******/ ]);
